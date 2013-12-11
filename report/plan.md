@@ -1,16 +1,26 @@
-kijken welke combinatie van PCA variantie gebeuren en classifier goed (en hoe goed?)
+# TODO #
 
-overleggen wat er moet gebeuren (en wat er te makkelijk is)
+## Classifiers ##
 
-pca en parzen grondig testen
+#### PCA ####
+- pca en parzen grondig testen
+- kijken welke combinatie van PCA variantie gebeuren en classifier goed (en hoe goed?)
+- check via confusion matrixes welke digits problemen opleveren
+- zoek daarmee feature/classifier welke die digits die de problemen oplossen
 
-check via confusion matrixes welke digits problemen opleveren
-zoek daarmee feature/classifier welke die digits die de problemen oplossen
+####Chain code####
+- Apply no normalizing of the images
+- Apply the chain on the right way (so look to the direction of the chain)
+- Create a file for doing the chain code experiments
+- Eventually: faster calculations of this stuff
 
-scan echte cijfers
-recommendations (later over nadenken)
+#### Report: ####
+- Create a really good test plan to check the performance of the solutions
+- Scan echte cijfers
+- recommendations (later over nadenken)
 
-deliverbales uiteindelijk:
+
+##Deliverbales uiteindelijk##
   code voor scenario I
     trained once 
     at least 200 to 1000 objects per class
@@ -27,9 +37,7 @@ deliverbales uiteindelijk:
     zie report.md
     maak test code voor mooie grafiekjes en redenaties
     
-    
-    
-NOTES:
+##NOTES:##
 parzen 
 pca variance 0.8
 train/test = 0.5
