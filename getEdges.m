@@ -30,6 +30,6 @@ function bounds = computeEdges(image)
     % Use canny_old because the new methods don't always return a closed
     % contour
     % bw = edge(I2, 'zerocross');
-    dilate = imerode(I2, [[1, 1, 1];[1, 1, 1];[1, 1, 1]]);
+    dilate = imerode(I2, [[0, 1, 0];[1, 1, 1];[0, 1, 0]]);
     bounds = I2 - dilate;
 end
