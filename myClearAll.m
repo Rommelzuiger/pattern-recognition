@@ -1,0 +1,1 @@
+clear all; prwaitbar off; opengl software; close all; clc; prwarning off;
