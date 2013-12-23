@@ -1,0 +1,59 @@
+%MSTPLOT Plot minimum spanning trees
+%
+%   MSTPLOT (A,L)
+%
+% INPUT
+%   A   Nx2 or Nx3 Data matrix
+%   L   List of edges belonging to one or more minimum spanning trees
+%
+% DESCRIPTION
+% Plots data and edges in the minimum spanning trees. Applicable only
+% for 2D or 3D data. L can be found by KMST. If A is unknown, but
+% dissimilarity data are given, then a 2D or 3D approximation can be
+% found by PSEM.
+%
+% SEE ALSO
+% KMST, PSEM
+
+% Copyright: Elzbieta Pekalska, ela.pekalska@googlemail.com
+% Faculty EWI, Delft University of Technology and
+% School of Computer Science, University of Manchester
+
+
+function mstplot (A,L)
+A = +A;
+[n,m] = size(A);
+
+len = length(L);
+K   = round (len/(n-1));
+
+if m == 2,
+  plot(A(:,1),A(:,2),'.r')
+  text(A(:,1),A(:,2),num2str([1:n]'));
+  grid on;
+  hold on;
+  for i=1:len
+    plot([A(L(i,1),1) A(L(i,2),1)],[A(L(i,1),2) A(L(i,2),2)],'k');
+  end
+
+elseif m == 3,
+
+  plot3(A(:,1),A(:,2),A(:,3),'.r')
+  text(A(:,1),A(:,2),A(:,3),num2str([1:n]'));
+  grid on;
+  hold on;
+  for i=1:len
+    plot3([A(L(i,1),1) A(L(i,2),1)],[A(L(i,1),2) A(L(i,2),2)],[A(L(i,1),3) A(L(i,2),3)],'k');
+  end
+else
+  error('Plotting is only possible for two or three variables.');
+  return;
+end
+
+hold off
+if K == 1,
+  title('Minimum Spanning Tree');
+else
+  title([num2str(K) ' Minimum Spanning Trees']);
+end
+return;
